@@ -7,7 +7,7 @@ app.use(cors());
 
 const CLIENT_ID = "1274952030116515954"; // Your actual Discord app client ID
 const CLIENT_SECRET = "xC3TTOcpNH5vsGOWV8WVWxgG7SFR89Ts";
-const REDIRECT_URI = "https://syde.onrender.com/callback";
+const REDIRECT_URI = "https://syde-e151.onrender.com/callback";
 
 
 let userMap = {};
