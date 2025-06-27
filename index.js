@@ -47,7 +47,7 @@ app.get("/callback", async (req, res) => {
 
     // Tell the user to return to Roblox
     res.send(`
-     <html>
+       <html>
     <head>
       <title>Discord Connected</title>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -108,8 +108,8 @@ app.get("/callback", async (req, res) => {
     <body>
       <div class="container fade">
         <h1>✅ Discord Connected</h1>
-        <div class="username">${user.username}#${user.discriminator}</div>
-        <div class="id">ID: ${user.id}</div>
+        <div class="username">${discordUser.username}#${discordUser.discriminator}</div>
+        <div class="id">ID: ${discordUser.id}</div>
         <div class="note">You can now return to Roblox.</div>
       </div>
     </body>
