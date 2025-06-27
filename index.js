@@ -47,9 +47,73 @@ app.get("/callback", async (req, res) => {
 
     // Tell the user to return to Roblox
     res.send(`
-        <h2>✅ Discord Connected!</h2>
-        <p>Your ID: ${discordUser.id}</p>
-        <p>You can now return to Roblox.</p>
+     <html>
+    <head>
+      <title>Discord Connected</title>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      <style>
+        body {
+          background-color: #0f0f0f;
+          font-family: 'Poppins', sans-serif;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+
+        .container {
+          background: #1e1e1e;
+          border-radius: 16px;
+          padding: 40px 50px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+          text-align: center;
+          max-width: 400px;
+        }
+
+        h1 {
+          color: #00ff88;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+
+        .username {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+
+        .id {
+          font-size: 14px;
+          color: #aaa;
+          margin-bottom: 20px;
+        }
+
+        .note {
+          font-size: 13px;
+          color: #ccc;
+        }
+
+        .fade {
+          animation: fadeIn 0.6s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container fade">
+        <h1>✅ Discord Connected</h1>
+        <div class="username">${user.username}#${user.discriminator}</div>
+        <div class="id">ID: ${user.id}</div>
+        <div class="note">You can now return to Roblox.</div>
+      </div>
+    </body>
+  </html>
     `);
 });
 
