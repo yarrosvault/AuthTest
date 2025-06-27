@@ -41,9 +41,12 @@ app.get("/callback", async (req, res) => {
 
     const discordUser = userResponse.data;
     userMap[discordUser.id] = {
-        username: `${discordUser.username}#${discordUser.discriminator}`,
-        time: Date.now()
-    };
+  username: discordUser.discriminator !== "0"
+    ? `${discordUser.username}#${discordUser.discriminator}`
+    : discordUser.username,
+  time: Date.now()
+};
+
 
     // Tell the user to return to Roblox
     res.send(`
